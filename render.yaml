@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: mood-recom
+    runtime: python
+    plan: free
+    rootDir: moodtune
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT app:app
