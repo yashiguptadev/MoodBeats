@@ -12,7 +12,7 @@ python app.py
 ```
 Open http://127.0.0.1:5000
 
-## Algorithms used (for viva)
+## Algorithms used
 1. **AI approach:** content-based recommendation using mood, energy, valence and genre.
 2. **Heuristic search:** weighted similarity score; rank candidate songs by estimated match.
 3. **Fuzzy logic:** triangular overlapping membership functions for each mood. Handles partial membership rather than strict labels.
@@ -32,13 +32,6 @@ Final = 0.55 * heuristic + 0.25 * fuzzy mood membership + 0.20 * neural mood pro
 - The MLP trains on the same tiny catalogue used for recommendation. No held-out accuracy claims are made.
 - Adversarial responses are simulated and the minimax stage is mainly educational.
 - To build a production system, obtain properly licensed song features, a larger training set, a test split, and real user feedback.
-
-## Viva questions
-**Q: Why fuzzy logic?** A: Mood boundaries overlap; fuzzy membership captures degrees of fit.
-**Q: What is a chromosome?** A: A sequence of unique song IDs representing one playlist.
-**Q: What does minimax mean here?** A: Choose the recommendation maximizing utility under the worst modeled listener response.
-**Q: What does the neural network predict?** A: Probabilities of five mood labels based on the song's numeric features and genre.
-**Q: Is this Spotify?** A: No, it's a standalone educational recommender with YouTube search links.
 
 ## Genetic Algorithm Working visualizer
 After clicking **Recommend my songs**, click **🧬 View Genetic Algorithm Working** under the playlist. The visualizer shows real initial/final best playlists, the fitness formula, population size, selection/crossover/mutation settings, and a slider to inspect all 35 generations. Each generation records one actual reproduction example (two parents, crossover child, whether mutation occurred, and resulting child), plus the best and average fitness before reproduction. The displayed example may have no mutation because mutation is probabilistic.
